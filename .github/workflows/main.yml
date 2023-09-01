@@ -25,7 +25,7 @@ jobs:
         run: docker tag my-website:latest ${{bharathm.cs22@bmsce.ac.in}}/my-website:latest
       
       - name: Push Docker Image
-        run: docker push ${{bharathm.cs22@bmsce.ac.in}}/my-website:latest
+        run: docker push ${{secrets.DOCKER_USERNAM}}/my-website:latest
 
       - name: Run Docker Container
-        run: docker run -d -p 80:80 ${{bharathm.cs22@bmsce.ac.in}}/mywebsite:latest
+        run: docker run -d -p 80:80 ${{secrets.DOCKER_USERNAM}}/mywebsite:latest
